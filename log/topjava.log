@@ -1,0 +1,8 @@
+2020-06-05 09:37:37,575 DEBUG UserServlet [UserServlet.java:18] redirect to users
+2020-06-05 09:55:09,781 DEBUG UserServlet [UserServlet.java:18] redirect to users
+2020-06-05 10:54:08,195 DEBUG UserServlet [UserServlet.java:18] redirect to users
+2020-06-05 10:58:55,552 DEBUG UserServlet [UserServlet.java:18] redirect to users
+2020-06-05 11:03:57,564 DEBUG MealServlet [MealServlet.java:18] redirect to meals
+2020-06-05 11:04:07,648 DEBUG UserServlet [UserServlet.java:18] redirect to users
+2020-06-05 11:07:40,566 DEBUG MealServlet [MealServlet.java:18] redirect to meals
+2020-06-05 11:07:59,342 DEBUG UserServlet [UserServlet.java:18] redirect to users
