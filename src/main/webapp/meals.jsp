@@ -19,7 +19,9 @@
         .normal {color: green}
         .exceeded {color: red}
     </style>
+
 </head>
+
 <body>
 <br>
     <h3><a href="index.html">Home</a> </h3>
@@ -43,7 +45,8 @@
             <jsp:useBean id="meal" scope="page" type="ru.javawebinar.topjava.model.MealTo"/>
             <tr class="${meal.excess ? 'exceeded' : 'normal'}">
 <%--            <tr style="background: ${meal.excess ? '#FC8B98' : '#8BFCAF'}">--%>
-                <td>${localDateTimeFormat.parse(meal.dateTime)}</td>
+               <td><%=TimeUtil.toString(meal.getDateTime())%></td>
+        <%--        <td>${localDateTimeFormat.parse(meal.dateTime)}</td>    --%>
                 <td>${meal.description}</td>
                 <td>${meal.calories}</td>
                 <td>${meal.excess}</td>
@@ -52,7 +55,7 @@
             </tr>
         </c:forEach>
 
-                </table>
-            </section>
-            </body>
-            </html>
+    </table>
+
+</body>
+</html>

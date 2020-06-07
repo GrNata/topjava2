@@ -39,7 +39,7 @@ public class MealServlet extends HttpServlet {
         String action = request.getParameter("action");
 
         if (action == null || action.isEmpty())     action = "listMeals";
-        request.setAttribute("localDateTimeFormat", new SimpleDateFormat("yyyy-MM-dd'T'hh:mm") );
+//        request.setAttribute("localDateTimeFormat", new SimpleDateFormat("yyyy-MM-dd'T'hh:mm") );
 
         switch (action) {
             case "delete" :
@@ -85,7 +85,7 @@ public class MealServlet extends HttpServlet {
         log.info("POST ",  meal.isNew() ? "Create {}" : "Update {}", meal);
         repository.save(meal);
 
-        request.setAttribute("localDateTimeFormat", new SimpleDateFormat("yyyy-MM-dd'T'hh:mm") );
+//        request.setAttribute("localDateTimeFormat", new SimpleDateFormat("yyyy-MM-dd'T'hh:mm") );
         request.setAttribute("mealTo", MealsUtil.getWithExceed(repository.getAll(), 2000));
         request.getRequestDispatcher("/meals.jsp").forward(request, response);
     }

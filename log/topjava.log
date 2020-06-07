@@ -92,3 +92,14 @@
 2020-06-06 13:12:53,751 DEBUG MealServlet [MealServlet.java:39] redirect to meals
 2020-06-06 13:12:53,757 INFO  MealServlet [MealServlet.java:59] update meal id = 1
 2020-06-06 13:12:57,830 INFO  MealServlet [MealServlet.java:90] POST 
+2020-06-07 07:33:45,201 DEBUG MealServlet [MealServlet.java:36] redirect to meals
+2020-06-07 07:33:45,214 INFO  MealServlet [MealServlet.java:64] list of meals
+2020-06-07 07:35:26,862 DEBUG MealServlet [MealServlet.java:36] redirect to meals
+2020-06-07 07:35:26,876 INFO  MealServlet [MealServlet.java:64] list of meals
+2020-06-07 07:36:43,859 DEBUG MealServlet [MealServlet.java:36] redirect to meals
+2020-06-07 07:36:43,868 INFO  MealServlet [MealServlet.java:64] list of meals
+2020-06-07 07:36:53,482 DEBUG MealServlet [MealServlet.java:36] redirect to meals
+2020-06-07 07:36:53,484 INFO  MealServlet [MealServlet.java:59] new meal
+2020-06-07 07:37:07,144 INFO  MealServlet [MealServlet.java:85] POST 
+2020-06-07 07:38:21,424 DEBUG MealServlet [MealServlet.java:36] redirect to meals
+2020-06-07 07:38:21,439 INFO  MealServlet [MealServlet.java:64] list of meals
