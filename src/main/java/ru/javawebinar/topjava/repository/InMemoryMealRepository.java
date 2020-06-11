@@ -8,12 +8,13 @@ import java.util.Collection;
 import java.util.Currency;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
 
 public class InMemoryMealRepository implements MealRepository {
     private Map<Integer, Meal> repository = new ConcurrentHashMap<>();
-    private AtomicLong counter = new AtomicLong(0);
+    private AtomicInteger counter = new AtomicInteger(0);
 
 
     public InMemoryMealRepository() {
@@ -29,7 +30,7 @@ public class InMemoryMealRepository implements MealRepository {
     @Override
     public Meal save(Meal meal) {
         if (meal.isNew()) {
-            meal.setId((int) counter.incrementAndGet());
+            meal.setId(counter.incrementAndGet());
         }
             return repository.put(meal.getId(), meal);
 
