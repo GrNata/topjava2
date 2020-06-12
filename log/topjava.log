@@ -1,0 +1,2 @@
+2020-06-12 09:58:16,631 DEBUG UserServlet [UserServlet.java:18] forward to users
+2020-06-12 09:58:21,115 INFO  MealServlet [MealServlet.java:18] getAll
