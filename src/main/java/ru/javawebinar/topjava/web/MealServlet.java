@@ -21,8 +21,8 @@ import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.Objects;
 
-import static ru.javawebinar.topjava.util.DateTimeUtil.parseLocalDate;
-import static ru.javawebinar.topjava.util.DateTimeUtil.parseLocalTime;
+//import static ru.javawebinar.topjava.util.DateTimeUtil.parseLocalDate;
+//import static ru.javawebinar.topjava.util.DateTimeUtil.parseLocalTime;
 
 //import static ru.javawebinar.topjava.util.DateTimeUtil.parseLocalDate;
 //import static ru.javawebinar.topjava.util.DateTimeUtil.parseLocalTime;
@@ -81,9 +81,6 @@ public class MealServlet extends HttpServlet {
         } else {
             controller.update(meal);
         }
-
-//        setAttributes(request);
-
         response.sendRedirect("meals");
 //        request.getRequestDispatcher("/meals.jsp").forward(request, response);
     }

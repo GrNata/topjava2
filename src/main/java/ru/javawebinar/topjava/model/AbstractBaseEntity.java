@@ -21,6 +21,6 @@ public abstract class AbstractBaseEntity {
 
     @Override
     public String toString() {
-        return getClass().getSimpleName() + ":" + id;
+        return getClass().getSimpleName() + " :" + id;
     }
 }
