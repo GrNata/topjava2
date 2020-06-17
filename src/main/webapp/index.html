@@ -6,9 +6,17 @@
 <body>
 <h3>Проект <a href="https://github.com/JavaWebinar/topjava" target="_blank">Java Enterprise (Topjava)</a></h3>
 <hr>
-<ul>
-    <li><a href="users">Users</a></li>
-    <li><a href="meals">Meals</a></li>
-</ul>
+
+<form method="post" action="users">
+    <b>Meals of&nbsp;</b>
+    <select name="userId">
+<!--        <option>Выберите пользователя</option>-->
+        <option value="1">Nata</option>
+        <option value="2">Dima</option>
+        <option value="3">Seva</option>
+    </select>
+    <br><hr><br>
+    <button type="submit">Выбрать </button>
+</form>
 </body>
 </html>
