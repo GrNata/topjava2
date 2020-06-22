@@ -27,13 +27,16 @@ import static ru.javawebinar.topjava.UserTestData.USER_ID;
 public class InMemoryMealRepository extends InMemoryBaseRepository<Meal> implements MealRepository {
     private static final Logger log = LoggerFactory.getLogger(InMemoryMealRepository.class);
 
-    // Map  userId -> mealRepository
     private final Map<Integer, InMemoryBaseRepository<Meal>> usersMealsMap = new ConcurrentHashMap<>();
 
     {
         MealsUtil.MEALS.forEach(meal -> save(meal, USER_ID));
-        save(new Meal(LocalDateTime.of(2015, Month.JUNE, 1, 14, 0), "Админ ланч", 510), ADMIN_ID);
-        save(new Meal(LocalDateTime.of(2015, Month.JUNE, 1, 21, 0), "Админ ужин", 1500), ADMIN_ID);
+        save(new Meal(LocalDateTime.of(2020, Month.JANUARY, 30, 10, 0),
+                "Завтрак", 500));
+        save(new Meal(LocalDateTime.of(2020, Month.JANUARY, 30, 14, 00),
+                "Обед", 1000));
+
+//        save(new Meal(LocalDateTime.of(2015, Month.JUNE, 1, 21, 0), "Админ ужин", 1500), ADMIN_ID);
     }
 
 

@@ -17,6 +17,7 @@ import static ru.javawebinar.topjava.UserTestData.USER;
 public class InMemoryUserRepository extends InMemoryBaseRepository<User> implements UserRepository {
 
     public void init() {
+        System.out.println("USER INIT");
         map.clear();
         map.put(UserTestData.USER_ID, USER);
         map.put(UserTestData.ADMIN_ID, ADMIN);

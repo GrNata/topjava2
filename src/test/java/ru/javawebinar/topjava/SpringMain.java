@@ -23,9 +23,13 @@ public class SpringMain {
         try (ConfigurableApplicationContext appCtx = new ClassPathXmlApplicationContext(
                 "spring/spring-test.xml")) {
             System.out.println("Bean definition names: " + Arrays.toString(appCtx.getBeanDefinitionNames()));
-            AdminRestController adminUserController = appCtx.getBean(AdminRestController.class);
-//            adminUserController.create(new User(null, "userName", "email@mail.ru", "password", Role.ADMIN));
+
             InMemoryUserRepository userRepository = appCtx.getBean(InMemoryUserRepository.class);
+            userRepository.init();
+
+//            AdminRestController adminUserController = appCtx.getBean(AdminRestController.class);
+//            adminUserController.create(new User(null, "userName", "email@mail.ru", "password", Role.ADMIN));
+
             System.out.println(userRepository.getAll());
             System.out.println("__________");
             UserService userService = appCtx.getBean(UserService.class);
@@ -40,6 +44,8 @@ public class SpringMain {
             filteredMealsWithExcess.forEach(System.out::println);
             System.out.println();
             System.out.println(mealController.getBetween(null, null, null, null));
+            System.out.println();
+            System.out.println(mealController.getAll());
         }
     }
 }
