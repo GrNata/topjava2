@@ -24,7 +24,7 @@ import static ru.javawebinar.topjava.UserTestData.ADMIN_ID;
 import static ru.javawebinar.topjava.UserTestData.USER_ID;
 
 @Repository
-public class InMemoryMealRepository implements MealRepository {
+public class InMemoryMealRepository extends InMemoryBaseRepository<Meal> implements MealRepository {
     private static final Logger log = LoggerFactory.getLogger(InMemoryMealRepository.class);
 
     // Map  userId -> mealRepository
