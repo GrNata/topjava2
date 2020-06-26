@@ -11,6 +11,9 @@ public class Meal extends AbstractBaseEntity {
 
     private int calories;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User user;
+
     public Meal() {
     }
 
@@ -51,6 +54,14 @@ public class Meal extends AbstractBaseEntity {
 
     public void setCalories(int calories) {
         this.calories = calories;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
