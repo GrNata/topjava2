@@ -25,6 +25,7 @@ public class UserService {
     }
 
     public void delete(int id) {
+        System.out.println("SERVICE id="+id);
         checkNotFoundWithId(repository.delete(id), id);
     }
 
