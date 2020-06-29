@@ -2,6 +2,8 @@ package ru.javawebinar.topjava;
 
 import ru.javawebinar.topjava.model.Meal;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.Arrays;
 import java.util.List;
@@ -10,7 +12,8 @@ import static java.time.LocalDateTime.of;
 import static ru.javawebinar.topjava.model.AbstractBaseEntity.START_SEQ;
 
 public class MealTestData {
-    public static TestMatcher<Meal> MEAL_MATCHER = TestMatcher.usingFieldsComparator();
+//    public static TestMatcher<Meal> MEAL_MATCHER = TestMatcher.usingFieldsComparator();
+    public static TestMatcher<Meal> MEAL_MATCHER = TestMatcher.usingFieldsComparator("user");
 
     public static final int NOT_FOUND = 10;
     public static final int MEAL1_ID = START_SEQ + 2;
@@ -29,7 +32,7 @@ public class MealTestData {
     public static final List<Meal> MEALS = Arrays.asList(MEAL7, MEAL6, MEAL5, MEAL4, MEAL3, MEAL2, MEAL1);
 
     public static Meal getNew() {
-        return new Meal(null, of(2020, Month.FEBRUARY, 1, 18, 0), "Созданный ужин", 300);
+        return new Meal(null, of(2020, Month.JUNE, 10, 20, 0), "Созданный ужин", 300);
     }
 
     public static Meal getUpdated() {
