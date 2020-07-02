@@ -122,6 +122,7 @@ public class MealServiceTest {
 
     @Test
     public void getAll() throws Exception {
+        System.out.println("ALL: "+service.getAll(USER_ID));
         MEAL_MATCHER.assertMatch(service.getAll(USER_ID), MEALS);
     }
 
