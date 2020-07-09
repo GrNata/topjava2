@@ -39,6 +39,7 @@ public class DataJpaUserRepository implements UserRepository {
 
     @Override
     public List<User> getAll() {
+        System.out.println("REPO USER DATAJPA: "+crudRepository.findAll());
         return crudRepository.findAll(SORT_NAME_EMAIL);
     }
 

@@ -36,6 +36,7 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         log.debug("getAll");
+        System.out.println("ADMIN: "+adminController.getAll());
         request.setAttribute("users", adminController.getAll());
         request.getRequestDispatcher("/users.jsp").forward(request, response);
     }
