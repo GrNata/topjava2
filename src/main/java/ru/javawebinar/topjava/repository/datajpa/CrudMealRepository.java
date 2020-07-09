@@ -14,13 +14,13 @@ import java.util.List;
 @Transactional(readOnly = true)
 public interface CrudMealRepository extends JpaRepository<Meal, Integer> {
 
-    @Override
-    @Transactional
-    @Modifying
-    Meal save(Meal meal);
+//    @Override
+//    @Transactional
+//    @Modifying
+//    Meal save(Meal meal);
 
-    @Query("SELECT m FROM Meal m WHERE m.id=:id AND m.user.id=:userId")
-    Meal getOne(@Param("id") int id, @Param("userId") int userId);
+//    @Query("SELECT m FROM Meal m WHERE m.id=:id AND m.user.id=:userId")
+//    Meal getOne(@Param("id") int id, @Param("userId") int userId);
 
     @Transactional
     @Modifying
