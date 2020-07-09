@@ -44,7 +44,6 @@ public class UserService {
 
     @Cacheable("users")
     public List<User> getAll() {
-        System.out.println("USER SERVICE getALL");
         return repository.getAll();
     }
 
