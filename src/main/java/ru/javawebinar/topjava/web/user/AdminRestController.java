@@ -20,6 +20,7 @@ public class AdminRestController extends AbstractUserController {
 
     @Override
     public User create(User user) {
+        System.out.println("ADMIN COMT: "+user);
         return super.create(user);
     }
 

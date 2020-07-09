@@ -7,14 +7,17 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
+import ru.javawebinar.topjava.UserTestData;
+import ru.javawebinar.topjava.model.User;
 import ru.javawebinar.topjava.repository.inmemory.InMemoryMealRepository;
 import ru.javawebinar.topjava.repository.inmemory.InMemoryUserRepository;
 import ru.javawebinar.topjava.service.UserService;
 import ru.javawebinar.topjava.util.exception.NotFoundException;
 import ru.javawebinar.topjava.web.meal.MealRestController;
 
-import static ru.javawebinar.topjava.UserTestData.NOT_FOUND;
-import static ru.javawebinar.topjava.UserTestData.USER_ID;
+import java.util.Collection;
+
+import static ru.javawebinar.topjava.UserTestData.*;
 
 @ContextConfiguration({"classpath:spring/spring-app.xml", "classpath:spring/inmemory.xml"})
 @RunWith(SpringRunner.class)
@@ -33,13 +36,24 @@ public class InMemoryAdminRestControllerSpringTest {
 
     @Test
     public void delete() throws Exception {
-        controller.delete(USER_ID);
-        Assert.assertNull(repository.get(USER_ID));
+//        controller.delete(USER_ID);
+//        Assert.assertNull(repository.get(USER_ID));
+
+        System.out.println("GET: "+controller.get(UserTestData.USER_ID));
+
+        controller.delete(UserTestData.USER_ID);
+        Collection<User> users = controller.getAll();
+
+        System.out.println("SIZE = "+users.size());
+
+        Assert.assertEquals(1, users.size());
+        Assert.assertEquals(ADMIN, users.iterator().next());
     }
 
-    @Test
+    @Test(expected = NotFoundException.class)
     public void deleteNotFound() throws Exception {
-        Assert.assertThrows(NotFoundException.class, () -> controller.delete(NOT_FOUND));
+//        Assert.assertThrows(NotFoundException.class, () -> controller.delete(NOT_FOUND));
+        controller.delete(NOT_FOUND);
     }
 
 
