@@ -27,15 +27,15 @@ public class DateTimeUtil {
         return localDate != null ? localDate.plus(1, ChronoUnit.DAYS).atStartOfDay() : MAX_DATE;
     }
 
-    public static String toString(LocalDateTime ldt) {
-        return ldt == null ? "" : ldt.format(DATE_TIME_FORMATTER);
-    }
+        public static String toString(LocalDateTime ldt) {
+            return ldt == null ? "" : ldt.format(DATE_TIME_FORMATTER);
+        }
 
-    public static @Nullable LocalDate parseLocalDate(@Nullable String str) {
-        return StringUtils.isEmpty(str) ? null : LocalDate.parse(str);
-    }
+        public static @Nullable LocalDate parseLocalDate(@Nullable String str) {
+            return StringUtils.isEmpty(str) ? null : LocalDate.parse(str);
+        }
 
-    public static @Nullable LocalTime parseLocalTime(@Nullable String str) {
-        return StringUtils.isEmpty(str) ? null : LocalTime.parse(str);
-    }
+        public static @Nullable LocalTime parseLocalTime(@Nullable String str) {
+            return StringUtils.isEmpty(str) ? null : LocalTime.parse(str);
+        }
 }

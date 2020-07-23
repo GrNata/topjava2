@@ -55,6 +55,8 @@ public abstract class AbstractUserServiceTest extends AbstractServiceTest {
         int newId = created.id();
         User newUser = getNew();
         newUser.setId(newId);
+        System.out.println("1 : "+created);
+        System.out.println("2 : "+newUser);
         USER_MATCHER.assertMatch(created, newUser);
         USER_MATCHER.assertMatch(service.get(newId), newUser);
     }
