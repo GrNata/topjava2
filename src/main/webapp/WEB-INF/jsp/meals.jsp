@@ -3,6 +3,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="fn" uri="http://topjava.javawebinar.ru/functions" %>
 <html>
+<%--<logger name="org.springframework.web" level="debug"/>--%>
+
 <jsp:include page="fragments/headTag.jsp"/>
 <body>
 <jsp:include page="fragments/bodyHeader.jsp"/>
@@ -13,19 +15,19 @@
     <form method="get" action="meals/filter">
         <dl>
             <dt><spring:message code="meal.startDate"/>:</dt>
-            <dd><input type="date" name="startDate" value="${param.startDate}"></dd>
+            <dd><input type="date" name="startDate" value="${param.startDate}" autocomplete="off"></dd>
         </dl>
         <dl>
             <dt><spring:message code="meal.endDate"/>:</dt>
-            <dd><input type="date" name="endDate" value="${param.endDate}"></dd>
+            <dd><input type="date" name="endDate" value="${param.endDate}" autocomplete="off"></dd>
         </dl>
         <dl>
             <dt><spring:message code="meal.startTime"/>:</dt>
-            <dd><input type="time" name="startTime" value="${param.startTime}"></dd>
+            <dd><input type="time" name="startTime" value="${param.startTime}" autocomplete="off"></dd>
         </dl>
         <dl>
             <dt><spring:message code="meal.endTime"/>:</dt>
-            <dd><input type="time" name="endTime" value="${param.endTime}"></dd>
+            <dd><input type="time" name="endTime" value="${param.endTime}" autocomplete="off"></dd>
         </dl>
         <button type="submit"><spring:message code="meal.filter"/></button>
     </form>
