@@ -34,6 +34,7 @@ public class UserService {
     }
 
     public User get(int id) {
+        System.out.println("SERVICE GET USER: "+id);
         return checkNotFoundWithId(repository.get(id), id);
     }
 

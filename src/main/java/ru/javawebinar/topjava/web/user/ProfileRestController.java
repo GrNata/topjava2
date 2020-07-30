@@ -14,6 +14,7 @@ public class ProfileRestController extends AbstractUserController {
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public User get() {
+        System.out.println("PROFILE_REST_CONTROLLER id: "+authUserId());
         return super.get(authUserId());
     }
 
