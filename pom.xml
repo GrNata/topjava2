@@ -11,15 +11,16 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-<!--        <java.version>14</java.version>-->
         <java.version>14</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <spring.version>5.2.5.RELEASE</spring.version>
-        <spring-data-jpa.version>2.3.1.RELEASE</spring-data-jpa.version>
+        <spring.version>5.2.8.RELEASE</spring.version>
+        <spring.security.version>5.3.3.RELEASE</spring.security.version>
+        <spring-data-jpa.version>2.3.2.RELEASE</spring-data-jpa.version>
         <jackson-json.version>2.11.1</jackson-json.version>
-        <tomcat.version>9.0.36</tomcat.version>
+<!--        <tomcat.version>9.0.36</tomcat.version>-->
+        <tomcat.version>9.0.30</tomcat.version>
 
         <!-- Logging -->
         <logback.version>1.2.3</logback.version>
@@ -48,11 +49,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
-<!--                    <source>13</source>-->
-<!--                    <target>13</target>-->
-                    <source>14</source>
-                    <target>14</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                     <compilerArgs>--enable-preview</compilerArgs>
                 </configuration>
             </plugin>
@@ -60,20 +60,19 @@
                 <!--https://junit.org/junit5/docs/current/user-guide/#running-tests-build-maven -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version>
-<!--                <version>2.9</version>-->
+                <version>2.9</version>
                 <configuration>
                     <argLine>-Dfile.encoding=UTF-8</argLine>
                 </configuration>
             </plugin>
+
 
             <!-- http://stackoverflow.com/questions/4305935/is-it-possible-to-supply-tomcat6s-context-xml-file-via-the-maven-cargo-plugin#4417945 -->
             <!-- https://codehaus-cargo.github.io/cargo/Tomcat+9.x.html -->
             <plugin>
                 <groupId>org.codehaus.cargo</groupId>
                 <artifactId>cargo-maven2-plugin</artifactId>
-<!--                <version>1.7.13</version>-->
-                <version>1.7.11</version>
+                <version>1.7.13</version>
                 <configuration>
                     <container>
                         <containerId>tomcat9x</containerId>
@@ -142,10 +141,20 @@
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
-<!--            <version>${spring-data-jpa.version}</version>-->
-            <version>2.2.5.RELEASE</version>
+            <version>${spring-data-jpa.version}</version>
         </dependency>
 
+        <!--security-->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
 
         <!--- ORM -->
         <dependency>
@@ -161,8 +170,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-jcache</artifactId>
-<!--            <version>${hibernate.version}</version>-->
-            <version>5.4.12.Final</version>
+            <version>${hibernate.version}</version>
         </dependency>
 
         <!--http://hibernate.org/validator/documentation/getting-started/#unified-expression-language-el-->
@@ -206,7 +214,7 @@
         <dependency>
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-servlet-api</artifactId>
-            <version>9.0.31</version>
+            <version>${tomcat.version}</version>
             <scope>provided</scope>
         </dependency>
 
@@ -225,20 +233,17 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-<!--            <version>${jackson-json.version}</version>-->
-            <version>2.11.0</version>
+            <version>${jackson-json.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-hibernate5</artifactId>
-<!--            <version>${jackson-json.version}</version>-->
-            <version>2.10.3</version>
+            <version>${jackson-json.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jsr310</artifactId>
-<!--            <version>${jackson-json.version}</version>-->
-            <version>2.11.0</version>
+            <version>${jackson-json.version}</version>
         </dependency>
 
         <!--Test-->
@@ -297,8 +302,7 @@
                 <dependency>
                     <groupId>org.apache.tomcat</groupId>
                     <artifactId>tomcat-jdbc</artifactId>
-<!--                    <version>${tomcat.version}</version>-->
-                    <version>9.0.31</version>
+                    <version>${tomcat.version}</version>
                     <scope>provided</scope>
                 </dependency>
                 <dependency>

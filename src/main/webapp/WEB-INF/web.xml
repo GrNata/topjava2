@@ -6,6 +6,8 @@
 
     <display-name>Topjava</display-name>
 
+<!--    <absolute-ordering />-->
+
     <context-param>
         <param-name>spring.profiles.default</param-name>
         <param-value>postgres,datajpa</param-value>
@@ -64,4 +66,9 @@
         <filter-name>encodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+
+<!--    <absolute-ordering />-->
+
+
 </web-app>
